@@ -24,21 +24,28 @@ Install matplotlib here: https://matplotlib.org/stable/install/index.html
 ** Task 3.5 What product sold the most? Why do you think it sold the most? **
 * TypeError: datetime64 type does not support sum operations *
 line: 
-""all_products = df.groupby('Product').sum()['Quantity Ordered']
-all_products""
+\\
+all_products = df.groupby('Product').sum()['Quantity Ordered']
+all_products
+\\
  > fix: add parameters 'numeric_only=True'
 \\
     all_products = df.groupby('Product').sum()['Quantity Ordered']
     all_products
+\\
 
+\\
     => all_products = df.groupby('Product').sum(numeric_only=True)['Quantity Ordered']
         all_products 
 \\
 * add parameters for pandas.DataFrame.mean() column = '4'
 => read more here: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html
+
 \\
     prices = df.groupby('Product').mean()['Price Each']
     prices 
+\\
+\\
     => prices = df.groupby('Product').mean(4)['Price Each']
         prices
 \\
